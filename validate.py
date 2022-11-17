@@ -1,6 +1,7 @@
 import requests
 import json
 import os
+
 key = os.environ["geoapify_key"]
 
 ERROR_STRING = "ERROR: invalid address"
