@@ -1,14 +1,16 @@
 <html>
     <head>
         <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="static/css/main.css">
         <title>Address Validator</title>
     </head>
     <body>
-        <h1>What hath God wrought?</h1>
-        <form id="form" enctype="multipart/form-data" action="/validate" method="post">            
-			<label for="selector" action="/validate">Upload Address Book</label><br>
-            <input id="selector" name="csv" type="file" accept=".csv"/><br>
-            <input type="submit" value="Submit">
-        <form>
+        <div class='main'>
+            <h1>Upload your address book:</h1>
+            <form id="form" enctype="multipart/form-data" action="/validate" method="post">            
+                <input id="selector" name="csv" type="file" accept=".csv"/><br>
+                <input type="submit" value="Submit">
+            <form>
+        <div>
     </body>
 </html>
