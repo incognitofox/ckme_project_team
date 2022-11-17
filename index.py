@@ -3,7 +3,6 @@ import pandas as pd
 from werkzeug.utils import secure_filename
 import os
 from driver import go
-#import addr_search
 
 UPLOAD_FOLDER = './uploads'
 
