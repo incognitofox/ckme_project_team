@@ -19,6 +19,7 @@ def validate_addr(org, addr):
     '''
     # key in your API key below 
     geoapify_key = key
+    print(org, addr)
 
     payload = {}
     payload["apiKey"] = geoapify_key
