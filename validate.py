@@ -3,6 +3,8 @@ import json
 import os
 key = os.environ["geoapify_key"]
 
+ERROR_STRING = "ERROR: invalid address"
+
 def validate_addr(org, addr):
     '''
     Returns a valid address given organization name and known address.
