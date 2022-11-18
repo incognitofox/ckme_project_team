@@ -40,6 +40,7 @@ def go(fname):
 
     fname = fname.split(".")[0]
     df = pd.read_csv(f'./uploads/{fname}.csv')
+    df = df.dropna(how="all")
     print(df.columns)
     df['address'] = df.apply(get_addr_str, axis=1)
     df['address'] = df.apply(lambda x: get_valid_addr(x['COMPANY'], x['address']), axis=1) 
