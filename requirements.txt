@@ -3,3 +3,4 @@ pandas
 gunicorn
 bs4
 requests
+ecommercetools
