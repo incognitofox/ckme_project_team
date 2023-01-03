@@ -2,7 +2,7 @@ import pandas as pd
 from validate import validate_addr, ERROR_STRING
 from scraper import scrape_addr
 
-def get_valid_addr(org, addr):
+def get_valid_addr(addr):
     '''
     Returns a valid address given an organization name 
     and a k nown address.
@@ -13,9 +13,9 @@ def get_valid_addr(org, addr):
     Returns (string): valid address
     '''
 
-    result = validate_addr(org, addr)
+    result = validate_addr(addr)
     if result == ERROR_STRING:
-        result = scrape_addr(org)
+        result = scrape_addr(addr['COMPANY'])
     return result
 
 def get_addr_str(row):
@@ -42,8 +42,9 @@ def go(fname):
     df = pd.read_csv(f'./uploads/{fname}.csv')
     df = df.dropna(how="all")
     print(df.columns)
-    df['address'] = df.apply(get_addr_str, axis=1)
-    df['address'] = df.apply(lambda x: get_valid_addr(x['COMPANY'], x['address']), axis=1) 
+    df['COUNTRY'] = df['COUNTRY'].fillna("United States")
+    #df['address'] = df.apply(get_addr_str, axis=1)
+    df['address'] = df.apply(lambda x: get_valid_addr(x), axis=1) 
     df.to_csv(f"{fname}-cleaned.csv")
 
 

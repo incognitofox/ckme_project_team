@@ -1,4 +1,4 @@
-from ecommercetools import seo
+#from ecommercetools import seo
 import pandas
 import bs4
 import urllib3
@@ -13,6 +13,9 @@ def scrape_addr(org):
         org (string): organization name
     Returns (string): an address
     '''
+
+    pass
+    '''
     results = seo.get_serps(org)
     
     myurl = results['link'][0]
@@ -22,8 +25,8 @@ def scrape_addr(org):
         ca_certs=certifi.where())
     html = pm.urlopen(url=myurl, method="GET").data
     soup = bs4.BeautifulSoup(html, features="html.parser")
-
-    # Scrape main page of website
+    
+    # scrape main page of website
     # addr_1 = soup.find('div', text=)
 
     # About
@@ -40,7 +43,7 @@ def scrape_addr(org):
         # Process address and return
         # return addr_1
     # else:
-
+    '''
 
 
     
