@@ -5,3 +5,4 @@ googlesearch-python
 bs4
 requests
 ecommercetools
+pycountry
