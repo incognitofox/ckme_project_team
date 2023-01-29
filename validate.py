@@ -3,8 +3,11 @@ import json
 import os
 from pycountry import countries
 import re
+from dotenv import load_dotenv
 
-key = os.environ["GOOGLE_API"]
+load_dotenv()
+
+key = os.getenv('GOOGLE_API')
 
 ERROR_STRING = "ERROR: invalid address"
 

@@ -1,0 +1,5 @@
+Doesnt work for countries outside of AMERICAN
+
+speed is a problem (batch requests)
+
+regex/ scraping
