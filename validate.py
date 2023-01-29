@@ -4,7 +4,7 @@ import os
 from pycountry import countries
 import re
 
-key = os.environ["google_api"]
+key = os.environ["GOOGLE_API"]
 
 ERROR_STRING = "ERROR: invalid address"
 
