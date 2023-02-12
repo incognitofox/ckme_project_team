@@ -47,13 +47,22 @@ def validate_addr(addr):
         "addressLines": ["1600 Amphitheatre Pkwy"]
         }
 
+    header = {
+        'Content-Type: application/json'
+    }
+
     url = 'https://addressvalidation.googleapis.com/v1:validateAddress?'
 
     data = {"key": key, "address": address, "enableUspsCass": True} 
 
-    r = requests.get(url, params=data)
+    #r = requests.get(url, params=data)
+    
+    #data = r.json()
+
     print('success')
 
+    r = requests.post(url = url, data = data)
+    
     #res = json.loads(r.text)#['results'][0]['formatted_address']
 
     print(r)
