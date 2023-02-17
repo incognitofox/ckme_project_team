@@ -1,8 +1,6 @@
 flask
 pandas
 gunicorn
-googlesearch-python
 bs4
 requests
-ecommercetools
 pycountry
