@@ -1,4 +1,5 @@
 import pandas as pd
+import json
 from validate import validate_addr, ERROR_STRING
 from scraper import scrape_addr
 
@@ -12,6 +13,10 @@ def get_valid_addr(addr):
         addr (string): known address
     Returns (string): valid address
     '''
+
+    known = {}
+    with open("static/data/valid.json") as f:
+        known = json.load(f)
 
     result = validate_addr(addr)
     if result == ERROR_STRING:
