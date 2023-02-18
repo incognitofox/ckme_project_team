@@ -9,7 +9,7 @@
     <body>
         <div class='main'>
             <h1>Upload your address book:</h1>
-            <form id="form" enctype="multipart/form-data" action="/validate/" method="post">            
+            <form id="form" enctype="multipart/form-data" action="/validate" method="post">            
                 <input id="selector" name="csv" type="file" accept=".csv"/><br>
                 <input type="submit" value="Submit">
             <form>
@@ -21,6 +21,7 @@
                 });
             </script>
             <table id="example" class="display" style="width:100%">
+                {{data}}
             </table>
         </div>
     </body>

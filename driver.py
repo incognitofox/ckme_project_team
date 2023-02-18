@@ -15,8 +15,8 @@ def get_valid_addr(addr):
     '''
 
     known = {}
-    with open("static/data/valid.json") as f:
-        known = json.load(f)
+    #with open("static/data/valid.json") as f:
+    #    known = json.load(f)
 
     result = validate_addr(addr)
     if result == ERROR_STRING:

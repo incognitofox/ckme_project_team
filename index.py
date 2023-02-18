@@ -21,7 +21,8 @@ def validate():
     fname = f.filename.split(".")[0]
     print(fname)
     go(fname)
-    return send_file(f"{fname}-cleaned.csv")
+    html = pd.read_csv(f"{fname}-cleaned.csv").to_html()
+    return render_template('index.html', data=html)
 
 if __name__ == '__main__':
     app.run()
