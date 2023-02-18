@@ -2,15 +2,26 @@
     <head>
         <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="static/css/main.css">
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.2/css/jquery.dataTables.css">
+        <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.2/js/jquery.dataTables.js"></script>
         <title>Address Validator</title>
     </head>
     <body>
         <div class='main'>
             <h1>Upload your address book:</h1>
-            <form id="form" enctype="multipart/form-data" action="/validate" method="post">            
+            <form id="form" enctype="multipart/form-data" action="/validate/" method="post">            
                 <input id="selector" name="csv" type="file" accept=".csv"/><br>
                 <input type="submit" value="Submit">
             <form>
         <div>
+        <div class='table'>
+            <script>
+                $(document).ready(function () {
+                    $('#example').DataTable();
+                });
+            </script>
+            <table id="example" class="display" style="width:100%">
+            </table>
+        </div>
     </body>
 </html>
