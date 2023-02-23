@@ -50,6 +50,7 @@ def go(fname):
     df['COUNTRY'] = df['COUNTRY'].fillna("United States")
     #df['address'] = df.apply(get_addr_str, axis=1)
     df['address'] = df.apply(lambda x: get_valid_addr(x), axis=1) 
+    #df.to_json(f"data/results.json")
     df.to_csv(f"{fname}-cleaned.csv")
 
 
