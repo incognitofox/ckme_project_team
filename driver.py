@@ -14,10 +14,6 @@ def get_valid_addr(addr):
     Returns (string): valid address
     '''
 
-    known = {}
-    #with open("static/data/valid.json") as f:
-    #    known = json.load(f)
-
     result = validate_addr(addr)
     if result == ERROR_STRING:
         result = scrape_addr(addr['COMPANY'])
@@ -48,9 +44,7 @@ def go(fname):
     df = df.dropna(how="all")
     print(df.columns)
     df['COUNTRY'] = df['COUNTRY'].fillna("United States")
-    #df['address'] = df.apply(get_addr_str, axis=1)
     df['address'] = df.apply(lambda x: get_valid_addr(x), axis=1) 
-    #df.to_json(f"data/results.json")
     df.to_csv(f"{fname}-cleaned.csv")
 
 

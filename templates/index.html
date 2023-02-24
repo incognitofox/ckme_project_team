@@ -1,22 +1,21 @@
 <html>
     <head>
-        <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js" integrity="sha512-XMVd28F1oH/O71fzwBnV7HucLxVwtxf26XV8P4wPk26EDxuGZ91N8bsOttmnomcCD3CS5ZMRL50H0GgOHvegtg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js" integrity="sha512-a9NgEEK7tsCvABL7KqtUTQjl69z7091EVPpw5KxPlZ93T141ffe1woLtbXTX+r2/8TtTvRX/v4zTL2UlMUPgwg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/extjs/6.2.0/ext-all.js" integrity="sha512-X2mCQagqg8+wbViIPeZPYY6ci/iBFNOQWEyKduIwsFLJN3fTxA6Fsh636+/VgE6RGBE6T8lvIAa7QxmZ423I7w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.2/js/jquery.dataTables.js"></script>
-        <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.2/js/jquery.dataTables.min.js"></script>
-        <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/2.3.4/js/dataTables.buttons.min.js"></script>
-        <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.2/js/dataTables.bootstrap5.min.js"</script>
-        <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/2.3.4/js/buttons.html5.min.js"></script>
-        <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/2.3.4/js/buttons.bootstrap5.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+        <script src="https://cdn.datatables.net/1.13.2/js/jquery.dataTables.js"></script>
+        <script src="https://cdn.datatables.net/1.13.2/js/dataTables.bootstrap5.js"></script>
+        <script src="https://cdn.datatables.net/buttons/2.3.4/js/dataTables.buttons.js"></script>
+        <script src="https://cdn.datatables.net/buttons/2.3.4/js/buttons.bootstrap5.js"></script>
+        <script src="https://cdn.datatables.net/buttons/2.3.4/js/buttons.colVis.js"></script>
+        <script src="https://cdn.datatables.net/buttons/2.3.4/js/buttons.html5.js"></script>
 
         <link rel="stylesheet" href="static/css/main.css">
         <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.2/css/jquery.dataTables.css">
         <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.2/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/2.3.4/css/buttons.bootstrap5.min.css">
- 
         <title>Address Validator</title>
     </head>
     <body>
@@ -53,20 +52,21 @@
                             document.getElementById("wheel").style.display = "none";
                             document.getElementById("wheel").style.width = "100%";
                             document.getElementById("table_div").innerHTML = data.data;
-                            document.getElementById("table").class = "nowrap compact table table-striped";
+                            document.getElementById("table").class = "display compact table table-striped";
                             console.log(document.getElementById("table"));
-                            $.extend($.fn.dataTable.defaults, {
-                              dom: 'Bfrtip'
-                            });
-                            $('#table').DataTable(
-                                {
+                            $('#table').DataTable( {
+                                    dom: 'Bfrtip',
                                     buttons: [
-                                        'copy', 'excel', 'pdf'
+                                        'copyHtml5',
+                                        'excelHtml5',
+                                        'csvHtml5',
+                                        'pdfHtml5',
+                                        'colvis'
                                     ],
-                                    scrollY: 200,
+                                    scrollY: "45%",
                                     scrollX: "75%",
-                                }
-                            );
+                            } );
+                            console.log(document.getElementById("table"));
                         }
                     }
                     xhr.send(post);

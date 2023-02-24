@@ -2,11 +2,11 @@
   text-align: center;
   margin: 0;
   position: relative;
-  float: left;
-  top: 50%;
-  left: 50%;
+  top: 10%;
+  /*left: 50%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+  */
   font-family: "Verdana";
 }
 div.dataTables_wrapper {
@@ -15,7 +15,7 @@ div.dataTables_wrapper {
         position:relative;
 }
 input[type=button], input[type=submit], input[type=reset] {
-  background-color: #04AA6D;
+  background-color: #304ffe;
   border: none;
   color: white;
   padding: 16px 32px;
@@ -36,10 +36,10 @@ input[type=button], input[type=submit], input[type=reset] {
   width: 64px;
   height: 64px;
   margin: 8px;
-  border: 8px solid #04AA6D;
+  border: 8px solid #304ffe;
   border-radius: 50%;
   animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-  border-color: #04AA6D transparent transparent transparent;
+  border-color: #304ffe transparent transparent transparent;
 }
 .lds-ring div:nth-child(1) {
   animation-delay: -0.45s;
