@@ -1,0 +1,108 @@
+{
+    "result": {
+        "verdict": {
+            "inputGranularity": "PREMISE",
+            "validationGranularity": "OTHER",
+            "geocodeGranularity": "OTHER",
+            "hasUnconfirmedComponents": true
+        },
+        "address": {
+            "formattedAddress": "CAPITAL CITY SYMPHONY, Washington, DC 20002, USA",
+            "postalAddress": {
+                "regionCode": "US",
+                "languageCode": "en",
+                "postalCode": "20002",
+                "administrativeArea": "DC",
+                "locality": "Washington",
+                "addressLines": [
+                    "CAPITAL CITY SYMPHONY"
+                ]
+            },
+            "addressComponents": [
+                {
+                    "componentName": {
+                        "text": "CAPITAL CITY SYMPHONY",
+                        "languageCode": "en"
+                    },
+                    "componentType": "point_of_interest",
+                    "confirmationLevel": "UNCONFIRMED_BUT_PLAUSIBLE"
+                },
+                {
+                    "componentName": {
+                        "text": "Washington",
+                        "languageCode": "en"
+                    },
+                    "componentType": "locality",
+                    "confirmationLevel": "CONFIRMED"
+                },
+                {
+                    "componentName": {
+                        "text": "DC",
+                        "languageCode": "en"
+                    },
+                    "componentType": "administrative_area_level_1",
+                    "confirmationLevel": "CONFIRMED"
+                },
+                {
+                    "componentName": {
+                        "text": "20002"
+                    },
+                    "componentType": "postal_code",
+                    "confirmationLevel": "CONFIRMED"
+                },
+                {
+                    "componentName": {
+                        "text": "USA",
+                        "languageCode": "en"
+                    },
+                    "componentType": "country",
+                    "confirmationLevel": "CONFIRMED"
+                }
+            ],
+            "missingComponentTypes": [
+                "route",
+                "street_number"
+            ],
+            "unconfirmedComponentTypes": [
+                "point_of_interest"
+            ]
+        },
+        "geocode": {
+            "location": {
+                "latitude": 38.9052763,
+                "longitude": -76.9815877
+            },
+            "plusCode": {
+                "globalCode": "87C5W249+49"
+            },
+            "bounds": {
+                "low": {
+                    "latitude": 38.8882591,
+                    "longitude": -77.0514461
+                },
+                "high": {
+                    "latitude": 38.9270099,
+                    "longitude": -76.943084
+                }
+            },
+            "featureSizeMeters": 6509.195,
+            "placeId": "ChIJLVBuZ2u4t4kRhN_Jztij7nQ",
+            "placeTypes": [
+                "postal_code"
+            ]
+        },
+        "uspsData": {
+            "standardizedAddress": {
+                "firstAddressLine": "CAPITAL CITY SYMPHONY",
+                "cityStateZipAddressLine": "WASHINGTON",
+                "city": "WASHINGTON",
+                "state": "DC",
+                "zipCode": "20002"
+            },
+            "dpvFootnote": "A1M1",
+            "postOfficeCity": "WASHINGTON",
+            "postOfficeState": "DC"
+        }
+    },
+    "responseId": "45496de9-d8d1-447f-9871-ffc3ee3e85e5"
+}
