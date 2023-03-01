@@ -64,14 +64,12 @@ def validateWithTextsearch(addr):
 
     r = requests.get(url, params=data)
     print('success')
-    print(r.text)
 
     try:
         ret_str = json.loads(r.text)['results'][0]['formatted_address']
     except:
         pass
 
-    print(ret_str)
     return ret_str
 
 
@@ -91,6 +89,8 @@ def validate_addr(addr):
     res = googleValidateAddressAPI(addr)
     time.sleep(0.01)    
     if res == ERROR_STRING:
+        print("FAILED")
+        modified = True
         res = validateWithTextsearch(addr)
     time.sleep(0.01)
     return [res, modified]

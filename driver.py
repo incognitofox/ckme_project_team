@@ -15,8 +15,9 @@ def get_valid_addr(addr):
     '''
 
     result = validate_addr(addr)
-    if result == ERROR_STRING:
-        result = scrape_addr(addr['COMPANY'])
+    if result[0] == ERROR_STRING:
+        result = [scrape_addr(addr['COMPANY']), True]
+    print(result)
     return result
 
 def get_addr_str(row):
@@ -45,7 +46,7 @@ def go(fname):
     print(df)
     print(df.columns)
     df['COUNTRY'] = df['COUNTRY'].fillna("United States")
-    df[['address', 'corrected']] = df.apply(lambda x: get_valid_addr(x), axis=1) 
+    df[['address', 'corrected']] = df.apply(lambda x: pd.Series(get_valid_addr(x)), axis=1) 
     df.to_csv(f"{fname}-cleaned.csv", index=False)
 
 
