@@ -42,9 +42,10 @@ def go(fname):
     fname = fname.split(".")[0]
     df = pd.read_csv(f'./uploads/{fname}.csv')
     df = df.dropna(how="all")
+    print(df)
     print(df.columns)
     df['COUNTRY'] = df['COUNTRY'].fillna("United States")
-    df['address'] = df.apply(lambda x: get_valid_addr(x), axis=1) 
-    df.to_csv(f"{fname}-cleaned.csv")
+    df[['address', 'corrected']] = df.apply(lambda x: get_valid_addr(x), axis=1) 
+    df.to_csv(f"{fname}-cleaned.csv", index=False)
 
 

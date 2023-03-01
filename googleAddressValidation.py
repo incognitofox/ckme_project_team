@@ -5,10 +5,13 @@ import os
 from pycountry import countries
 import re
 from geocode import geocode_addr
-from dotenv import load_dotenv
 import country_converter as coco
 
-load_dotenv()
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except:
+    pass
 
 key = os.getenv('GOOGLE_API_KEY')
 

@@ -3,13 +3,16 @@ import json
 import os
 from pycountry import countries
 import re
-from dotenv import load_dotenv
 
 
 #takes in an address string and returns a dict of longitude and latitude
 def geocode_addr(addr):
     
-    load_dotenv()
+    try:
+        from dotenv import load_dotenv
+        load_dotenv()
+    except:
+        pass
 
     key = os.getenv('GOOGLE_API_KEY')
 
